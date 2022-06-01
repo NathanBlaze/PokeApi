@@ -1,0 +1,18 @@
+.caja {
+    min-width: 95%;
+    max-width: 95%;
+    background-color: #eeeeee;
+    text-align: left;
+    background-repeat: no-repeat;
+    overflow: auto;
+    font-size: 12pt;
+    border-radius: 10px;
+    min-height: 50%;
+    min-height: 50vh;
+    margin: 20px auto;
+    padding: 20px 30px 20px 30px;
+}
+
+.card-columns{
+    column-count:5;
+}

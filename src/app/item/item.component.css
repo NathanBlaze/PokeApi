@@ -1,0 +1,8 @@
+.card-img-top{
+    object-fit:fill;
+}
+
+.no-item:not(:first-child) {
+    display:none;
+    }
+
