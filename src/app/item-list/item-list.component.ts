@@ -25,12 +25,7 @@ export class ItemListComponent implements OnInit {
         data.types.forEach((element: any) => {
           // console.log(element.type.name)
           pokemon.types.push(element.type)
-        });
-        pokemon.stats = [];
-        data.stats.forEach((element: any) => {
-          // console.log(element.type.name)
-          pokemon.stats.push(element.stat)
-        });
+        });       
 
         this.listaPokemon.push(pokemon);
         this.listaPokemonFiltrada = this.listaPokemon

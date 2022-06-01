@@ -10,32 +10,30 @@ import { PokemonService } from '../item-list/pokemon-service';
   styleUrls: ['./pokemon-details.component.css']
 })
 export class PokemonDetailsComponent implements OnInit {
-  @Input() pokemon: Pokemon;
+  public pokemonElegido: Pokemon;
 
-  constructor(private pokemonService: PokemonService, private router: Router, private route : ActivatedRoute) { }
+  constructor(private pokemonService: PokemonService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-
-    let id = this.route.snapshot.paramMap.get('id');
-
-    let observablePokemonId = this.pokemonService.getPokemonId(id);
-    observablePokemonId.subscribe(data => {
-      let pokemon: Pokemon = { ...data };
-      pokemon.types = [];
-      data.types.forEach((element: any) => {
-        // console.log(element.type.name)
-        pokemon.types.push(element.type)
-      });
-
-      pokemon.stats = [];
-      data.stats.forEach((element: any) => {
-        // console.log(element.type.name)
-        pokemon.stats.push(element.stat)
-      });
-
-
-    })
+    this.route.params.subscribe(data => {
+      const id = <number>data['id'];
+      if (id !== null) {
+        let observablePokemonId = this.pokemonService.getPokemonId(id);
+        observablePokemonId.subscribe(data => {
+          this.pokemonElegido = { ...data };
+          this.pokemonElegido.types = [];
+          data.types.forEach((element: any) => {
+            // console.log(element.type.name)
+            this.pokemonElegido.types.push(element.type)
+          });
+          data.stats = [];
+          data.stats.forEach((element: any) => {
+            // console.log(element.type.name)
+            this.pokemonElegido.stats.push(element)
+          });
+        })
+      }
+    });
   }
-
 }

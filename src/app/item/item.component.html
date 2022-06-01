@@ -12,27 +12,11 @@
             class="card-img-top ratio p-2" alt="...">
     </div>
     <div class="card-body d-flex flex-column">
-
-
-
-        <div class="d-flex bd-hightlight mb-3">
-            <div class="btn btn-dark" *ngFor="let stat of pokemon.stats">
-                {{stat.name}}
-
-            </div>
-        </div>
-
-
-
-
         <div class="d-flex bd-hightlight mb-3">
             <div class="btn btn-dark" *ngFor="let type of pokemon.types">
                 {{type.name}}
             </div>
         </div>
-
-        <a [routerLink]="['pokemon/', pokemon.id]" class="btn btn-primary"></a>
-        <!--<a [href]="'pokemon/'+ pokemon.id" class="btn btn-primary">Datos {{pokemon.name}}</a>-->
-
+        <a [routerLink]="['/pokemon/', pokemon.id]" class="btn btn-primary">Datos {{pokemon.name}}</a>
     </div>
 </div>
