@@ -16,14 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    // let observablePokemonId = this.pokemonService.getPokemonId(25);
-    // observablePokemonId.subscribe(data => { 
-    //   console.log(data);
-    // })
-    // let observablePokemonName = this.pokemonService.getPokemonName('charizard');
-    // observablePokemonName.subscribe(data => { 
-    //   console.log(data);
-    // })
+    
   }
 
   
